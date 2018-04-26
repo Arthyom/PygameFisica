@@ -1,6 +1,5 @@
 # importar modulos necesarios
-import pygame, sys, random, objetoSprite
-from pygame.locals import *
+import  objetoSprite
 
 class Mono(objetoSprite.ObjetoSprite):
     def __init__(self,x,y,rutaImagen):
