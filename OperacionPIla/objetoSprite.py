@@ -21,17 +21,7 @@ class ObjetoSprite(pygame.sprite.Sprite):
         imagenFondo.set_colorkey(color,RLEACCEL)
         return imagenFondo
 
-    def ocilar_Mono(self,tiempo):
-        #self.rectangulo_Pos.centerx += tiempo * self.velocidad[1]
-        self.rectangulo_Pos.centery += tiempo * self.velocidad[0]
-
-        if (self.rectangulo_Pos.bottom >= 400):
-            self.velocidad[0] = self.velocidad[1]
-        elif (self.rectangulo_Pos.top <= 360):
-            self.velocidad[0] = -self.velocidad[1]
-
-
-    def ocilar_Bola(self,tiempo,yTop, yBot):
+    def ocilar_Objeto(self,tiempo,yTop,yBot):
         #self.rectangulo_Pos.centerx += tiempo * self.velocidad[1]
         self.rectangulo_Pos.centery += tiempo * self.velocidad[0]
 
@@ -39,24 +29,8 @@ class ObjetoSprite(pygame.sprite.Sprite):
             self.velocidad[0] = self.velocidad[1]
         elif (self.rectangulo_Pos.top <= yTop):
             self.velocidad[0] = -self.velocidad[1]
-
-
+            
     
-            
-        
-
-
-
-        
-
-        
-            
-
-
-        
-
-                
-
 
     @classmethod
     def crear_Objetos(self,xEnt, yEnt, numeroObjetos, rutaImagen):

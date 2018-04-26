@@ -29,9 +29,9 @@ class Ventana:
                     sys.exit(0)
             tiempo = self.clock.tick(60)
             
-            self.actualizar_Bolas(coleccionBolasSup,tiempo,120, 270)
-            self.actualizar_Bolas(coleccionBolasInf,tiempo,550, 690)
-            self.actualizar_Monos(coleccionMonos,tiempo)
+            self.actualizar_OcilacionObjetos(coleccionBolasSup,tiempo,120, 270)
+            self.actualizar_OcilacionObjetos(coleccionBolasInf,tiempo,550, 690)
+            self.actualizar_OcilacionObjetos(coleccionMonos,tiempo,350,420)
             #self.cargar_Fondo('/home/frodo/Documentos/PyGames/fondo.jpg')
             self.cargar_Fondo('/home/frodo/Documentos/PyGames/OperacionPIla/Images/PilaVect.png')
             self.insertar_Objetos(coleccionBolasSup)
@@ -53,11 +53,7 @@ class Ventana:
         for objetoNuevo in coleccionObejtos:
             self.pantalla.blit(objetoNuevo.imagenFondo, objetoNuevo.rectangulo_Pos)
 
-    def actualizar_Bolas(self, coleccion, tiempo,yTop, yBot):
+    def actualizar_OcilacionObjetos(self, coleccion, tiempo,yTop, yBot):
         for bol in coleccion:
-            bol.ocilar_Bola(tiempo, yTop, yBot)
+            bol.ocilar_Objeto(tiempo, yTop, yBot)
             
-
-    def actualizar_Monos (self, coleccion,tiempo):
-        for mon in coleccion:
-            mon.ocilar_Mono(tiempo)
